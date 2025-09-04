@@ -11,19 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Run ESLint via npm script
       - name: Run ESLint
-        run: npx eslint .
+        run: npm run lint
 
-      - name: Run Tests (optional)
+      # Step 5: Run Tests (optional)
+      - name: Run Tests
         run: npm test
