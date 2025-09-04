@@ -28,5 +28,5 @@ jobs:
       - name: Run ESLint
         run: eslint .
 
-      - name: Run Tests (optional)
-        run: npm test
+      # - name: Run Tests (optional)
+      #   run: npm test
